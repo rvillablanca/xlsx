@@ -361,7 +361,7 @@ func NewDiskVCellStore() (CellStore, error) {
 	cs.baseDir = dir
 	cs.store = diskv.New(diskv.Options{
 		BasePath:     dir,
-		CacheSizeMax: 1024 * 1024, // 1MB for file. TODO make this configurable
+		CacheSizeMax: 1024 * 1024 * 10,
 	})
 	return cs, nil
 }
